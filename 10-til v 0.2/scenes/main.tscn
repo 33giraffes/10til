@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://blhr262xofoa7"]
+
+[ext_resource type="PackedScene" uid="uid://cnm6hg0et26pm" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://j5wobdhiyf03" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://qiqn5rvy6fk" path="res://scenes/npc.tscn" id="4_jyhfs"]
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_sugp2")
+
+[node name="Floor" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="WalkPath" type="Line2D" parent="Floor"]
+top_level = true
+
+[node name="npc" parent="." instance=ExtResource("4_jyhfs")]
+
+[node name="Player" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="Camera" type="Camera2D" parent="Player"]
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="Seconds" type="Label" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cost" type="Label" parent="UI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pos" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
